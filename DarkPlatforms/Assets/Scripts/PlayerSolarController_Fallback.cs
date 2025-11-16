@@ -24,6 +24,8 @@ public class PlayerSonarController_Fallback : MonoBehaviour
 
     private List<Vector3> lastPingHits = new List<Vector3>();
 
+    [SerializeField] private TimeAnnouncer announcer;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,6 +37,13 @@ public class PlayerSonarController_Fallback : MonoBehaviour
 
         Debug.Log("<color=cyan>🎮 FREE-FLIGHT SONAR READY – WASD = Full 2.5D Movement + E = Ping!</color>");
 
+    }
+
+
+    void Start()
+    {
+        Debug.Log("Announce Time");
+        announcer.AnnounceTime(521);
     }
 
     void Update()
